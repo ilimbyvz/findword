@@ -8,7 +8,7 @@ Created on Sun Oct 13 02:22:49 2019
 import tkinter as tk
 import re
  
-#Tkinter ile basit arayüz 
+
 
 def kelimebulma():
     
@@ -23,6 +23,9 @@ def kelimebulma():
         
     sonuc.configure(text=ke)
     sonuc2.configure(text="Kelime sayısı: "+str(len(ke)))
+    
+    
+    #Tkinter ile basit arayüz 
 pencere = tk.Tk()
 
 pencere.title("Kelime Bulma")
