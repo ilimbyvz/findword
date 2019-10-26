@@ -1,50 +1,43 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 13 02:22:49 2019
 
-@author: DELL
-"""
 
 import tkinter as tk
 import re
  
-
-
-def kelimebulma():
+def find():
     
     filename = 'text.txt' 
     fin=open(filename,'r')
-    kelime=k.get()
-    #s = fin.readline()
+    word=k.get()
     for line in fin:
         line = line.rstrip()
     
-        ke=re.findall("\S+"+kelime+"\S+|"+kelime+"\S+|"+"\S+"+kelime,line)
+        worde=re.findall("\S+"+word+"\S+|"+word+"\S+|"+"\S+"+word,line)
         
-    sonuc.configure(text=ke)
-    sonuc2.configure(text="Kelime sayısı: "+str(len(ke)))
+    result.configure(text=worde)
+    result2.configure(text="Number: "+str(len(worde)))
     
     
-    #Tkinter ile basit arayüz 
+    #Basic interface with Tkinter
 pencere = tk.Tk()
 
-pencere.title("Kelime Bulma")
+pencere.title("Find Word")
 pencere.geometry('800x300')
 
-kelime=tk.Label(text="Kelime:")
-kelime.grid(row=0,column=0)
+wordTK=tk.Label(text="Word:")
+wordTK.grid(row=0,column=0)
 
-k=tk.Entry()
-k.grid(row=0,column=1)
+entry=tk.Entry()
+entry.grid(row=0,column=1)
 
-buton = tk.Button(text='Bul', command=kelimebulma)
-buton.grid(row=1,column=1)
+button = tk.Button(text='Bul', command=kelimebulma)
+button.grid(row=1,column=1)
 
-sonuc=tk.Label(text=" BOŞ")
-sonuc.grid(row=2,column=1)
+result=tk.Label(text="  ")
+result.grid(row=2,column=1)
 
-sonuc2=tk.Label(text=" BOŞ")
-sonuc2.grid(row=3,column=1)
+result2=tk.Label(text="  ")
+resukt2.grid(row=3,column=1)
 
 
     
